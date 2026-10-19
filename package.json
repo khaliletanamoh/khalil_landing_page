@@ -1,1 +1,12 @@
-
+{
+  "name": "khalil-landing-page",
+  "version": "1.0.0",
+  "description": "My personal landing page",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
