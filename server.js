@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(express.static("public"));
+
 const profile = {
   name: "Khalil Etana",
   title: "Full Stack Developer",
@@ -79,6 +81,38 @@ app.get("/", (req, res) => {
           color: #7dd3fc;
           text-decoration: none;
         }
+        .profile-card {
+          border: 1px solid #334155;
+          border-radius: 18px;
+          padding: 18px;
+          background: rgba(15,23,42,0.8);
+        }
+        .badge {
+          display: inline-block;
+          background: rgba(34,197,94,0.18);
+          color: #86efac;
+          padding: 8px 12px;
+          border-radius: 999px;
+          margin-bottom: 16px;
+          font-size: 0.82rem;
+          font-weight: bold;
+        }
+        .avatar {
+          height: 440px;
+          border-radius: 20px;
+          overflow: hidden;
+          background: linear-gradient(180deg, #0f172a, #111827);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(255,255,255,0.08);
+        }
+        .avatar img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
       </style>
     </head>
     <body>
@@ -103,6 +137,15 @@ app.get("/", (req, res) => {
           <strong>Skills:</strong>
           <div class="skills">
             ${profile.skills.map(skill => `<span class="tag">${skill}</span>`).join("")}
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="profile-card">
+            <div class="badge">Based in Mettu, Ilubabor, Ethiopia</div>
+            <div class="avatar">
+              <img src="/photo.jpg" alt="Khalil Etana" />
+            </div>
           </div>
         </div>
       </div>
